@@ -1,0 +1,253 @@
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: #374151;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.2s;
+}
+
+.nav-link:hover {
+    background-color: #f3f4f6;
+}
+
+.nav-link.active {
+    background-color: #e5e7eb;
+    font-weight: bold;
+}
+
+/* 模态框样式 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+/* 首页banner样式 */
+.banner {
+    width: 1020px;
+    height: 290px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.course-animation {
+    animation: fadeIn 1s ease-in;
+}
+
+/* 添加 Logo 相关样式 */
+.logo-container {
+    width: 160px;  /* Logo容器宽度设为原始尺寸的一半以适应导航栏 */
+    height: 90px;  /* 保持宽高比 */
+    margin-right: 1rem;
+    overflow: hidden;
+}
+
+.site-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  /* 确保logo完整显示且不变形 */
+}
+
+/* 调整烟花画布层级和透明度 */
+.fireworks-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3; /* 改为最底层 */
+    background: transparent;
+    opacity: 0.7;
+}
+
+/* 调整背景图片层级和透明度 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('personal-photo.2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.7; /* 增加透明度从0.5改为0.7，使背景更亮 */
+    z-index: -2;
+    transition: background-image 1s ease-in-out;
+}
+
+/* 调整内容区域背景透明度 */
+.container {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5); /* 降低内容区域不透明度 */
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+/* 移除main的渐变遮罩 */
+main::before {
+    display: none; /* 移除这个额外的遮罩层 */
+}
+
+/* 调整导航栏和卡片透明度 */
+nav {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* 调整卡片背景透明度 */
+.bg-white {
+    background-color: rgba(255, 255, 255, 0.6) !important; /* 降低卡片不透明度 */
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 调整背景切换动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.7; /* 匹配新的背景透明度 */
+    }
+}
+
+/* 调整文字颜色使其更明显 */
+.text-gray-600 {
+    color: #374151 !important; /* 加深文字颜色 */
+}
+
+/* 确保内容区域在背景之上 */
+main {
+    position: relative;
+    z-index: 1;
+}
+
+/* 确保导航栏在最上层 */
+nav {
+    position: relative;
+    z-index: 2;
+}
+
+/* 优化导航栏样式 */
+nav {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* 优化卡片样式 */
+.bg-white {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bg-white:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 优化模态框样式 */
+.modal-content {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* 优化按钮悬停效果 */
+button {
+    transition: all 0.3s ease !important;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 优化课程卡片样式 */
+.course-card {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 试题库样式 */
+.question-item {
+    transition: all 0.3s ease;
+}
+
+.question-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.option {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: white;
+}
+
+.show-answer {
+    transition: all 0.2s ease;
+}
+
+/* 试题库按钮样式 */
+#startQuiz {
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+}
+
+#startQuiz:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+#startQuiz:active {
+    transform: translateY(1px);
+}
+
+/* 选项样式优化 */
+.option input[type="radio"] {
+    accent-color: #3b82f6;
+}
+
+.option:hover {
+    background-color: rgba(59, 130, 246, 0.05);
+} 
